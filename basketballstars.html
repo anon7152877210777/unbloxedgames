@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>1v1 lol</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #add8e6, #9370db);
+      color: #00008b;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>1v1 lol</h1>
+  <iframe src="https://anon7152877210777.github.io/fullscreenhttps/basketballstars.html" width="1450" height="750"></iframe>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+
+    .home-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <title>Unbloxed</title>
+</head>
+
+<body>
+  <button class="home-button" onclick="goToHomePage()">Home</button>
+
+  <script>
+    function goToHomePage() {
+      window.location.href = '/';
+    }
+
+    function goToGamePage(game) {
+      window.location.href = '/' + game.toLowerCase() + '.html';
+    }
+
+    var flexItems = document.getElementsByClassName('flex-item');
+    for (var i = 0; i < flexItems.length; i++) {
+      flexItems[i].addEventListener('click', function () {
+        var gameName = this.textContent.trim().replace(/ /g, "");
+        goToGamePage(gameName);
+      });
+    }
+
+  </script>
+</body>
+
+</html>
