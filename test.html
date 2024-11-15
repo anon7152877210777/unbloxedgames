@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1v1 lol</title>
+  <style>
+    body {
+      background: #1e1e2f; /* Dark background */
+      color: #ffffff; /* White text for contrast */
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #00bcd4; /* Cyan for the title */
+    }
+
+    iframe {
+      display: block;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 1450px;
+      height: 75vh;
+      border: none;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 10px;
+      background-color: #333;
+      color: #00bcd4;
+      padding: 10px 15px;
+      border: 1px solid #00bcd4;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: #00bcd4;
+      color: #333;
+    }
+
+    .fullscreen-button {
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      background-color: #333;
+      color: #00bcd4;
+      padding: 10px 15px;
+      border: 1px solid #00bcd4;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .fullscreen-button:hover {
+      background-color: #00bcd4;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="home-button" onclick="goToHomePage()">Home</button>
+
+  <h1>1v1 lol</h1>
+
+  <iframe id="gameFrame" src="https://anon7152877210777.github.io/fullscreenhttps/1v1lol.html"></iframe>
+
+  <!-- Fullscreen button placed at the bottom -->
+  <button class="fullscreen-button" onclick="openFullscreen()">Open Fullscreen Game</button>
+
+  <script>
+    function goToHomePage() {
+      window.location.href = '/index.html';  // Go to homepage
+    }
+
+    function openFullscreen() {
+      var newWindow = window.open("https://anon7152877210777.github.io/fullscreenhttps/1v1lol.html", "_blank");
+      
+      // Wait for the new tab to load and trigger fullscreen on it
+      newWindow.onload = function() {
+        var iframe = newWindow.document.querySelector('iframe');
+        
+        // Check if fullscreen is available and then request fullscreen
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { // Firefox
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { // IE/Edge
+          iframe.msRequestFullscreen();
+        }
+      };
+    }
+  </script>
+</body>
+
+</html>
