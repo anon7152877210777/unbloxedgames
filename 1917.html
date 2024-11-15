@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unbloxed</title>
+  <style>
+  .fullscreen-button {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%); 
+    background-color: #333;
+    color: #00bcd4;
+    padding: 10px 15px;
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .fullscreen-button:hover {
+    background-color: #00bcd4;
+    color: #333;
+  }
+    
+    body {
+      background: #1e1e2f;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #00bcd4;
+    }
+
+    iframe {
+      display: block;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 1450px;
+      height: 75vh;
+      border: none;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #333;
+      color: #00bcd4;
+      padding: 10px 15px;
+      border: 1px solid #00bcd4;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: #00bcd4;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="home-button" onclick="goToHomePage()">Home</button>
+  <button class="fullscreen-button" onclick="openFullscreen()">Open Fullscreen Game</button>
+  <h1>Warfare 1917</h1>
+
+  <iframe src="https://anon7152877210777.github.io/fullscreenhttps/1917.html"></iframe>
+
+  <script>
+    function goToHomePage() {
+      window.location.href = './index.html';
+    }
+
+    function goToGamePage(game) {
+      window.location.href = '/' + game.toLowerCase() + '.html';
+    }
+
+    var flexItems = document.getElementsByClassName('flex-item');
+    for (var i = 0; i < flexItems.length; i++) {
+      flexItems[i].addEventListener('click', function () {
+        var gameName = this.textContent.trim().replace(/ /g, "");
+        goToGamePage(gameName);
+      });
+    }
+  function openFullscreen() {
+    var newWindow = window.open("https://anon7152877210777.github.io/fullscreenhttps/1917.html", "_blank");
+    
+    newWindow.onload = function() {
+      var iframe = newWindow.document.querySelector('iframe');
+      
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { 
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { 
+        iframe.msRequestFullscreen();
+      }
+    };
+  }
+  </script>
+</body>
+
+</html>
