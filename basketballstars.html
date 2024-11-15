@@ -6,6 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unbloxed</title>
   <style>
+  .fullscreen-button {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%); 
+    background-color: #333;
+    color: #00bcd4;
+    padding: 10px 15px;
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .fullscreen-button:hover {
+    background-color: #00bcd4;
+    color: #333;
+  }
+    
     body {
       background: #1e1e2f;
       color: #ffffff;
@@ -52,7 +72,7 @@
 
 <body>
   <button class="home-button" onclick="goToHomePage()">Home</button>
-
+  <button class="fullscreen-button" onclick="openFullscreen()">Open Fullscreen Game</button>
   <h1>Basketball Stars</h1>
 
   <iframe src="https://anon7152877210777.github.io/fullscreenhttps/basketballstars.html"></iframe>
@@ -73,6 +93,23 @@
         goToGamePage(gameName);
       });
     }
+  function openFullscreen() {
+    var newWindow = window.open("https://anon7152877210777.github.io/fullscreenhttps/1v1lol.html", "_blank");
+    
+    newWindow.onload = function() {
+      var iframe = newWindow.document.querySelector('iframe');
+      
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { 
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { 
+        iframe.msRequestFullscreen();
+      }
+    };
+  }
   </script>
 </body>
 
