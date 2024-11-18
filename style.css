@@ -10,8 +10,8 @@ body {
 }
 
 body {
-  background: #121212;
-  color: #e0e0e0;
+  background: #1e1e2f;
+  color: #ffffff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
